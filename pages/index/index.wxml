@@ -1,0 +1,50 @@
+<view class="page">
+  <!-- Monthly summary card -->
+  <view class="card summary">
+    <view class="summary-item">
+      <text class="summary-label">Expense</text>
+      <text class="summary-value text-expense">¥{{summary.expense}}</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-label">Income</text>
+      <text class="summary-value text-income">¥{{summary.income}}</text>
+    </view>
+    <view class="summary-item">
+      <text class="summary-label">Balance</text>
+      <text class="summary-value">¥{{summary.balance}}</text>
+    </view>
+  </view>
+
+  <!-- Records grouped by date -->
+  <view wx:if="{{groupedRecords.length === 0}}" class="empty-tip">
+    <text class="text-gray">No records yet. Tap + in the bottom right to add one</text>
+  </view>
+
+  <view wx:for="{{groupedRecords}}" wx:key="date" class="date-group">
+    <view class="date-header">{{item.date}}</view>
+    <view class="card record-card">
+      <view
+        wx:for="{{item.records}}"
+        wx:for-item="record"
+        wx:key="id"
+        class="record-row"
+        data-id="{{record.id}}"
+        bindlongpress="onDeleteRecord"
+      >
+        <view class="record-left">
+          <text class="record-icon">{{record.icon}}</text>
+          <view class="record-info">
+            <text class="record-category">{{record.categoryLabel}}</text>
+            <text wx:if="{{record.note}}" class="record-note text-gray">{{record.note}}</text>
+          </view>
+        </view>
+        <text class="record-amount {{record.type === 'expense' ? 'text-expense' : 'text-income'}}">
+          {{record.type === 'expense' ? '-' : '+'}}{{record.amount}}
+        </text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Floating add button -->
+  <view class="fab" bindtap="onAddTap">+</view>
+</view>

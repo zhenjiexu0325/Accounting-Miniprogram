@@ -1,0 +1,106 @@
+.page {
+  padding-bottom: 60rpx;
+  position: relative;
+  min-height: 100vh;
+}
+
+.summary {
+  display: flex;
+  justify-content: space-between;
+}
+
+.summary-item {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.summary-label {
+  font-size: 24rpx;
+  color: #999999;
+  margin-bottom: 8rpx;
+}
+
+.summary-value {
+  font-size: 34rpx;
+  font-weight: 600;
+}
+
+.empty-tip {
+  text-align: center;
+  padding: 120rpx 40rpx;
+  font-size: 26rpx;
+}
+
+.date-group {
+  margin: 0 20rpx;
+}
+
+.date-header {
+  font-size: 24rpx;
+  color: #999999;
+  padding: 16rpx 8rpx 8rpx;
+}
+
+.record-card {
+  margin: 0 0 20rpx;
+  padding: 8rpx 24rpx;
+}
+
+.record-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.record-row:last-child {
+  border-bottom: none;
+}
+
+.record-left {
+  display: flex;
+  align-items: center;
+}
+
+.record-icon {
+  font-size: 40rpx;
+  margin-right: 20rpx;
+}
+
+.record-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.record-category {
+  font-size: 28rpx;
+  color: #333333;
+}
+
+.record-note {
+  font-size: 22rpx;
+  margin-top: 4rpx;
+}
+
+.record-amount {
+  font-size: 30rpx;
+  font-weight: 600;
+}
+
+.fab {
+  position: fixed;
+  right: 40rpx;
+  bottom: 100rpx;
+  width: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  border-radius: 50%;
+  background-color: #4A90D9;
+  color: #ffffff;
+  font-size: 56rpx;
+  box-shadow: 0 4rpx 16rpx rgba(74, 144, 217, 0.4);
+}

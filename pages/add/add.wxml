@@ -1,0 +1,66 @@
+<view class="page">
+  <!-- Expense / Income switch -->
+  <view class="type-tabs">
+    <view
+      class="type-tab {{form.type === 'expense' ? 'active-expense' : ''}}"
+      data-type="expense"
+      bindtap="onTypeChange"
+    >Expense</view>
+    <view
+      class="type-tab {{form.type === 'income' ? 'active-income' : ''}}"
+      data-type="income"
+      bindtap="onTypeChange"
+    >Income</view>
+  </view>
+
+  <!-- Amount input -->
+  <view class="card amount-card">
+    <text class="amount-symbol">¥</text>
+    <input
+      class="amount-input"
+      type="digit"
+      placeholder="0.00"
+      value="{{form.amount}}"
+      bindinput="onAmountInput"
+    />
+  </view>
+
+  <!-- Category picker -->
+  <view class="card">
+    <view class="section-title">Category</view>
+    <view class="category-grid">
+      <view
+        wx:for="{{categoryList}}"
+        wx:key="key"
+        class="category-item {{form.category === item.key ? 'category-active' : ''}}"
+        data-key="{{item.key}}"
+        bindtap="onCategoryTap"
+      >
+        <text class="category-icon">{{item.icon}}</text>
+        <text class="category-label">{{item.label}}</text>
+      </view>
+    </view>
+  </view>
+
+  <!-- Date picker -->
+  <view class="card row-item">
+    <text class="section-title">Date</text>
+    <picker mode="date" value="{{form.date}}" bindchange="onDateChange">
+      <view class="picker-value">{{form.date}} ></view>
+    </picker>
+  </view>
+
+  <!-- Note -->
+  <view class="card row-item">
+    <text class="section-title">Note</text>
+    <input
+      class="note-input"
+      placeholder="Optional"
+      value="{{form.note}}"
+      bindinput="onNoteInput"
+    />
+  </view>
+
+  <!-- Save button -->
+  <button class="btn-primary save-btn" bindtap="onSave">Save</button>
+</view>

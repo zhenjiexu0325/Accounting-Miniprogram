@@ -1,0 +1,120 @@
+.page {
+  padding-bottom: 60rpx;
+}
+
+.month-switch {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.switch-btn {
+  font-size: 32rpx;
+  color: #4A90D9;
+  padding: 0 40rpx;
+}
+
+.month-text {
+  font-size: 32rpx;
+  font-weight: 600;
+  width: 200rpx;
+  text-align: center;
+}
+
+.type-tabs {
+  display: flex;
+  margin: 20rpx;
+  background-color: #ffffff;
+  border-radius: 12rpx;
+  overflow: hidden;
+}
+
+.type-tab {
+  flex: 1;
+  text-align: center;
+  padding: 20rpx 0;
+  font-size: 28rpx;
+  color: #999999;
+}
+
+.active-expense {
+  background-color: #FDEDED;
+  color: #E85C5C;
+  font-weight: 600;
+}
+
+.active-income {
+  background-color: #EAF7EE;
+  color: #3CB371;
+  font-weight: 600;
+}
+
+.chart-card {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 480rpx;
+}
+
+.pie-canvas {
+  width: 400rpx;
+  height: 400rpx;
+}
+
+.empty-tip {
+  font-size: 26rpx;
+  text-align: center;
+}
+
+.legend-card {
+  padding: 8rpx 24rpx;
+}
+
+.legend-row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 18rpx 0;
+  border-bottom: 1rpx solid #F0F0F0;
+}
+
+.legend-row:last-child {
+  border-bottom: none;
+}
+
+.legend-left {
+  display: flex;
+  align-items: center;
+}
+
+.legend-dot {
+  width: 16rpx;
+  height: 16rpx;
+  border-radius: 50%;
+  margin-right: 12rpx;
+}
+
+.legend-icon {
+  margin-right: 8rpx;
+  font-size: 30rpx;
+}
+
+.legend-label {
+  font-size: 27rpx;
+  color: #333333;
+}
+
+.legend-right {
+  display: flex;
+  align-items: center;
+}
+
+.legend-percent {
+  font-size: 24rpx;
+  margin-right: 16rpx;
+}
+
+.legend-value {
+  font-size: 28rpx;
+  font-weight: 600;
+}

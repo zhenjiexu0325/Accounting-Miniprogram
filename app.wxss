@@ -1,0 +1,32 @@
+page {
+  background-color: #F5F6F8;
+  font-size: 28rpx;
+  color: #333333;
+  box-sizing: border-box;
+}
+
+.card {
+  background-color: #ffffff;
+  border-radius: 16rpx;
+  padding: 24rpx;
+  margin: 20rpx;
+  box-shadow: 0 2rpx 12rpx rgba(0, 0, 0, 0.04);
+}
+
+.btn-primary {
+  background-color: #4A90D9;
+  color: #ffffff;
+  border-radius: 12rpx;
+}
+
+.text-expense {
+  color: #E85C5C;
+}
+
+.text-income {
+  color: #3CB371;
+}
+
+.text-gray {
+  color: #999999;
+}

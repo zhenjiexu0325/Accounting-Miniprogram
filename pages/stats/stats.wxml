@@ -1,0 +1,49 @@
+<view class="page">
+  <!-- Month switch -->
+  <view class="month-switch card">
+    <text class="switch-btn" bindtap="onPrevMonth">＜</text>
+    <text class="month-text">{{month}}</text>
+    <text class="switch-btn" bindtap="onNextMonth">＞</text>
+  </view>
+
+  <!-- Expense / Income switch -->
+  <view class="type-tabs">
+    <view
+      class="type-tab {{statType === 'expense' ? 'active-expense' : ''}}"
+      data-type="expense"
+      bindtap="onTypeChange"
+    >Expense Breakdown</view>
+    <view
+      class="type-tab {{statType === 'income' ? 'active-income' : ''}}"
+      data-type="income"
+      bindtap="onTypeChange"
+    >Income Breakdown</view>
+  </view>
+
+  <view class="card chart-card">
+    <view wx:if="{{breakdown.length === 0}}" class="empty-tip text-gray">
+      No {{statType === 'expense' ? 'expense' : 'income'}} records this month
+    </view>
+    <canvas
+      wx:else
+      type="2d"
+      id="pieCanvas"
+      class="pie-canvas"
+    ></canvas>
+  </view>
+
+  <!-- Legend / detail list -->
+  <view class="card legend-card" wx:if="{{breakdown.length > 0}}">
+    <view wx:for="{{breakdown}}" wx:key="key" class="legend-row">
+      <view class="legend-left">
+        <view class="legend-dot" style="background-color: {{item.color}};"></view>
+        <text class="legend-icon">{{item.icon}}</text>
+        <text class="legend-label">{{item.label}}</text>
+      </view>
+      <view class="legend-right">
+        <text class="legend-percent text-gray">{{item.percent}}%</text>
+        <text class="legend-value">¥{{item.value}}</text>
+      </view>
+    </view>
+  </view>
+</view>
